@@ -9,8 +9,12 @@ body {
   font-family: "Work Sans", sans-serif;
   min-height: 100vh;
   padding-top: 5%;
-  background-image: linear-gradient(100deg, #575656, #286e8b);
+  background-image: linear-gradient(100deg, #3c3b3b, #1a5168);
   color: #ffdfdb;
+}
+
+#header {
+  background: #999;
 }
 
 h1 {
@@ -19,6 +23,10 @@ h1 {
   letter-spacing: 0.1rem;
   font-size: 5rem;
   margin-bottom: 30px;
+  color: rgb(233, 180, 34);
+}
+#tombola {
+  background: #999;
 }
 
 button {
@@ -42,10 +50,11 @@ button {
   border: 15px;
   border-radius: 15px;
   min-width: 100px;
-  background-color: #ffdfdb;
+  background: white;
   margin-left: -8px;
   border-left: solid 1px rgb(247, 226, 223);
 }
+
 .numberTable {
   display: inline-block;
   width: calc(100% / 10);
@@ -55,6 +64,7 @@ button {
   border: 1px solid #fffbfb;
   border-radius: 8px;
   cursor: pointer;
+  background-image: linear-gradient(100deg, #3c3b3b, #1a5168);
 }
 .numberTable:hover {
   background: linear-gradient(100deg, #e0ec76, #e0f651);
@@ -70,6 +80,37 @@ button {
   left: 0;
   right: 0;
   transform: translateY(-50%);
+}
+
+#table-player {
+  background: #999;
+  margin-top: 50px;
+  width: 100%;
+  min-height: 300px;
+  padding: 10px;
+}
+#table-player .containerTable {
+  display: inline-block;
+  width: calc(95% / 3);
+  margin-left: 10px;
+}
+
+#table-player table {
+  width: 100%;
+  border-collapse: collapse; /* elimina doppie linee dei bordi */
+  border: 2px solid #ffffff;
+  background-image: linear-gradient(100deg, #3c3b3b, #1a5168);
+}
+
+/* Celle della tabella */
+#table-player td {
+  border: 1px solid #999;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
 }
 
 .estratto {
