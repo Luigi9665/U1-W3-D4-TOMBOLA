@@ -9,20 +9,18 @@ const numberGenerate = [];
 const generateTableNumber = () => {
   for (let i = 0; i < 90; i++) {
     const divNumberTable = document.createElement("div");
-    divNumberTable.className = "numbertable";
+    divNumberTable.className = "numberTable";
     const h3Number = document.createElement("h3");
+    h3Number.className = "numeroEstratto";
     h3Number.innerText = i + 1;
+    divNumberTable.setAttribute("data-num", i + 1);
     divNumberTable.appendChild(h3Number);
     tombola.insertBefore(divNumberTable, divBtn);
   }
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  generateTableNumber();
-});
-
 divBtn.addEventListener("click", (e) => {
-  e.defaultPrevented();
+  e.preventDefault();
   const button = e.target;
   if (!button) return;
   if (button.id === "btnGenerator") {
@@ -32,9 +30,15 @@ divBtn.addEventListener("click", (e) => {
       number = Math.floor(Math.random() * 90) + 1;
     } while (numberGenerate.includes(number));
     numberGenerate.push(number);
+    const estrattoDiv = document.querySelector(`div[data-num="${number}"]`);
+    if (estrattoDiv) estrattoDiv.classList.add("estratto");
   }
   if (numberGenerate.length === 90) {
     alert("SONO STATI GENERATI TUTTI I NUMERI!");
-    return;
+    location.reload();
   }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  generateTableNumber();
 });
